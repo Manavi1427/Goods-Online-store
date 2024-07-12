@@ -1,1 +1,4 @@
-console.log("hi")
+let cart=[]
+function cart(id,name,price){
+    
+}
