@@ -14,7 +14,7 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#new-arrivals">New Arrivals</a></li>
                     <li><a href="#best-sellers">Best Sellers</a></li>
-                    <li><a href="#sale">Sale</a></li>
+                    <li><a href="cart.html">Your Cart</a></li>
                     <input type="text" placeholder="Type to search">
                     <button><img id="logo" src="https://i.pinimg.com/736x/fa/0e/7b/fa0e7b992eff03c576727e95c746005c.jpg"></button>
                 </ul>
@@ -61,14 +61,22 @@
             <button class="add-to-cart" onclick="addToCart(5, 'Product 5', 350.00)">Add to Cart</button>
         </section>
 
-        <section class="your-cart">
-
+        <section class="product" data-id="6" data-name="Product 6" data-price="600.00" id="product6">
+            <img src="https://images.pexels.com/photos/2905238/pexels-photo-2905238.jpeg?cs=srgb&dl=pexels-bertellifotografia-2905238.jpg&fm=jpg" width="100%" alt="product6">
+            <h2>Bag</h2>
+            <p class="price">Rs.600.00</p>
+            <button class="add-to-cart" onclick="addToCart(6, 'Product 5', 350.00)">Add to Cart</button>
         </section>
     </main>
+    <section class="your-cart">
+        <h2>Your cart</h2>
+        <div id="cart">
+            
+        </div>
+    </section>
 
     <footer>
         <p>© 2023 Our Online Store. All rights reserved.</p>
     </footer>
     <script src="script.js"></script>
-</body>
 </html>
