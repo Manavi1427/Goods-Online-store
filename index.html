@@ -62,7 +62,7 @@
         </section>
 
         <section class="product" data-id="6" data-name="Bag" data-price="600.00" id="product6">
-            <img src="https://images.pexels.com/photos/2905238/pexels-photo-2905238.jpeg?cs=srgb&dl=pexels-bertellifotografia-2905238.jpg&fm=jpg" width="100%" alt="product6">
+            <img src="https://fantazystores.gr/80459-home_default/verde-women-s-shoulder-bag-16-6883-white.jpg" width="100%" alt="product6">
             <h2>Bag</h2>
             <p class="price">Rs.600.00</p>
             <button class="add-to-cart" onclick="addToCart(6, 'Bag', 350.00)">Add to Cart</button>
@@ -80,5 +80,23 @@
     <footer>
         <p>© 2023 Our Online Store. All rights reserved.</p>
     </footer>
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            window.addToCart = function(id, name, price) {
+                const existingItem = cart.find(item => item.id === id);
+                
+                if (existingItem) {
+                    existingItem.quantity += 1;
+                } else {
+                    const newItem = { id, name, price, quantity: 1 };
+                    cart.push(newItem);
+                }
+
+                localStorage.setItem('cart', JSON.stringify(cart));
+            };
+        });
+
+    </script>
 </html>

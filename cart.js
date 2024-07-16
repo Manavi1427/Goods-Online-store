@@ -1,18 +1,6 @@
-let cart=[]
-function addToCart(id,name,price){
-    let existing_item=cart.find(item=>item.id===id);
-    //if the item already exists, increase the quatity
-    if(existing_item){                          
-        existing_item+=1;
-    }
-    //if the item doesnt exist, add the item
-    else{
-        const newItem = { id, name, price, quantity: 1 };
-        cart.push(newItem);
-    }
-    update_cart_display();
-}
-function update_cart_display(){
+document.addEventListener('DOMContentLoaded', function() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
     const cart_div=document.getElementById("cart");
     cart_div.innerhtml='';
 
@@ -32,5 +20,4 @@ function update_cart_display(){
     const totalDiv = document.createElement('div');
     totalDiv.textContent = `Total: ${total.toFixed(2)}`;
     cart_div.appendChild(totalDiv);
-}
-
+});
