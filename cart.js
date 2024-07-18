@@ -8,16 +8,36 @@ document.addEventListener('DOMContentLoaded', function() {
         cart_div.innerhtml='<p>Your cart is empty</p>';
         return;
     }
-    const ul = document.createElement('ul');
-    cart.forEach(item => {
-        const li = document.createElement('li');
-        li.textContent = `${item.name} - Rs.${item.price.toFixed(2)} x ${item.quantity}`;
-        ul.appendChild(li);
-    });
-    cart_div.appendChild(ul);
 
     const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
     const totalDiv = document.createElement('div');
+    totalDiv.className="total";
     totalDiv.textContent = `Total: ${total.toFixed(2)}`;
     cart_div.appendChild(totalDiv);
+
+    //delete from cart function and delete  button
+    function renderCart() {
+        let cartContainer = document.getElementById('cartItems');
+        cartContainer.innerHTML = '';
+        cart.forEach(item => {
+          let itemElement = document.createElement('div');
+          itemElement.className="cart-row";
+          itemElement.textContent = `${item.name} (Quantity: ${item.quantity})`;
+          cartContainer.appendChild(itemElement);
+      
+          let deleteButton = document.createElement('button');
+          deleteButton.className="delete-button"
+          deleteButton.textContent = 'Delete';
+          deleteButton.onclick = () => {
+            deleteCartItem(item.id);
+            renderCart();
+          };
+          itemElement.appendChild(deleteButton);
+        });
+      }
+      
+      renderCart();
+      
+
+
 });
