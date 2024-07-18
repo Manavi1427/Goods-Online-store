@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     cart_div.appendChild(ul);
 
     const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-    const totalDiv = document.createElement('div.total');
+    const totalDiv = document.createElement('div');
     totalDiv.textContent = `Total: ${total.toFixed(2)}`;
     cart_div.appendChild(totalDiv);
 });

@@ -142,6 +142,10 @@ footer {
     padding: 10px 0;
     width: 100%;
 }
+.carousel-slide{
+    margin: 10px;
+    height:auto;
+}
 
 @media screen and (max-width: 768px) {
     .product {
