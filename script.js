@@ -13,9 +13,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
         localStorage.setItem('cart', JSON.stringify(cart));
     };
-    window.deleteFromCart=function(id){
-        let cartItems = JSON.parse(localStorage.getItem('cart'));
-        cartItems = cartItems.filter(item => item.id !== id);
-        localStorage.setItem('cart', JSON.stringify(cartItems));
-}
+    
 });

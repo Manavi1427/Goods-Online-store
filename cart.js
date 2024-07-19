@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
     const cart_div=document.getElementById("cart");
     cart_div.innerhtml='';
@@ -15,6 +15,11 @@ document.addEventListener('DOMContentLoaded', function() {
     totalDiv.textContent = `Total: ${total.toFixed(2)}`;
     cart_div.appendChild(totalDiv);
 
+    function deleteFromCart(id){
+      cart = cart.filter(item => item.id !== id);
+      localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
     //delete from cart function and delete  button
     function renderCart() {
         let cartContainer = document.getElementById('cartItems');
@@ -22,14 +27,14 @@ document.addEventListener('DOMContentLoaded', function() {
         cart.forEach(item => {
           let itemElement = document.createElement('div');
           itemElement.className="cart-row";
-          itemElement.textContent = `${item.name} (Quantity: ${item.quantity})`;
+          itemElement.textContent = `${item.name} - Rs.${item.price.toFixed(2)} (Quantity: ${item.quantity})`;
           cartContainer.appendChild(itemElement);
       
           let deleteButton = document.createElement('button');
           deleteButton.className="delete-button"
           deleteButton.textContent = 'Delete';
           deleteButton.onclick = () => {
-            deleteCartItem(item.id);
+            deleteFromCart(item.id);
             renderCart();
           };
           itemElement.appendChild(deleteButton);
