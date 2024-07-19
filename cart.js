@@ -4,12 +4,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const cart_div=document.getElementById("cart");
     cart_div.innerhtml='';
 
-    if(cart.length===0){
+    if(cart_div.length===0){
         cart_div.innerhtml='<p>Your cart is empty</p>';
         return;
     }
-
-    const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    let total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
     const totalDiv = document.createElement('div');
     totalDiv.className="total";
     totalDiv.textContent = `Total: ${total.toFixed(2)}`;
@@ -19,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
       cart = cart.filter(item => item.id !== id);
       localStorage.setItem('cart', JSON.stringify(cart));
     }
+
 
     //delete from cart function and delete  button
     function renderCart() {
