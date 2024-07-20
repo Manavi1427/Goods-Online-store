@@ -24,7 +24,9 @@ header {
 }
 
 .header-content h1 {
-    margin: 0;
+    color: #d3da86;
+    margin-left: 0;
+    float:left;
     flex-grow: 1; /* Ensures the title takes the available space */
 }
 
@@ -36,7 +38,6 @@ nav ul {
 }
 
 nav ul li {
-    font-size: larger;
     font-weight: 500;
     margin: 10px 15px; /* Adjusted spacing between menu items */
 }
@@ -54,11 +55,10 @@ nav ul li a:hover {
 #logo{
     height: 35px;
     margin:0%;
-    transition: background-color o.3s;
 }
 input{
     height: auto;
-    margin-left: 45px;
+    margin-left: 55px;
 }
 .banner-container{
     color: #aa951d;
@@ -136,15 +136,18 @@ input{
     left: 40px;
 }
 footer {
+    margin-top: 20px;
     background-color: #333;
     color: white;
     text-align: center;
     padding: 10px 0;
     width: 100%;
 }
-.carousel-slide{
-    margin: 10px;
-    height:auto;
+.carousel-inner .active{
+    width:100%;
+    margin:10px;
+    height:500px;
+    object-fit: cover;
 }
 
 @media screen and (max-width: 768px) {
