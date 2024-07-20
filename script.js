@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', function() {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
     window.addToCart = function(id, name, price) {
-        alert("Item added to the cart")
         const existingItem = cart.find(item => item.id === id);
         
         if (existingItem) {

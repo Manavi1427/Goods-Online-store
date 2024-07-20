@@ -24,6 +24,7 @@ header {
 }
 
 .header-content h1 {
+    color: #d3da86;
     margin: 0;
     flex-grow: 1; /* Ensures the title takes the available space */
 }
@@ -131,7 +132,10 @@ footer {
     text-align: center;
     padding: 10px 0;
 }
-
+.modal-content{
+    font-size: larger;
+    font-family: 'Courier New', Courier, monospace;
+}
 
 @media screen and (max-width: 768px) {
     .product {
