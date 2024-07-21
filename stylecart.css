@@ -24,6 +24,7 @@ header {
 }
 
 .header-content h1 {
+    color: #d3da86;
     margin: 0;
     flex-grow: 1; /* Ensures the title takes the available space */
 }

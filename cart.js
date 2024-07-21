@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let cartDiv=document.getElementById("cart");
 
-    const cart_div=document.getElementById("cart");
+    const cart_div=document.getElementById("cartItems");
     cart_div.innerhtml='';
 
     if(cart_div.length===0){
@@ -12,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const totalDiv = document.createElement('div');
     totalDiv.className="total";
     totalDiv.textContent = `Total: ${total.toFixed(2)}`;
-    cart_div.appendChild(totalDiv);
+    cartDiv.appendChild(totalDiv);
 
     function deleteFromCart(id){
       cart = cart.filter(item => item.id !== id);
