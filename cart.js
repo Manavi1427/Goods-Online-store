@@ -16,34 +16,42 @@ document.addEventListener('DOMContentLoaded', function() {
     cartDiv.appendChild(totalDiv);
 
     function deleteFromCart(id){
-      cart = cart.filter(item => item.id !== id);
+      cart = cart.map(item => {
+          if (item.id === id) {
+              if (item.quantity > 1) {
+                  item.quantity--;
+              } else {
+                  return null; // Mark for deletion
+              }
+          }
+          return item;
+      }).filter(item => item !== null);
+  
       localStorage.setItem('cart', JSON.stringify(cart));
-    }
+  }
 
 
     //delete from cart function and delete  button
     function renderCart() {
-        let cartContainer = document.getElementById('cartItems');
-        cartContainer.innerHTML = '';
-        cart.forEach(item => {
+      let cartContainer = document.getElementById('cartItems');
+      cartContainer.innerHTML = '';
+      cart.forEach(item => {
           let itemElement = document.createElement('div');
-          itemElement.className="cart-row";
+          itemElement.className = "cart-row";
           itemElement.textContent = `${item.name} - Rs.${item.price.toFixed(2)} (Quantity: ${item.quantity})`;
           cartContainer.appendChild(itemElement);
-      
+  
           let deleteButton = document.createElement('button');
-          deleteButton.className="delete-button"
+          deleteButton.className = "delete-button";
           deleteButton.textContent = 'Delete';
           deleteButton.onclick = () => {
-            deleteFromCart(item.id);
-            renderCart();
+              deleteFromCart(item.id);
+              renderCart();
           };
           itemElement.appendChild(deleteButton);
-        });
-      }
+      });
+  }
       
       renderCart();
-      
-
 
 });
