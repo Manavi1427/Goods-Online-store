@@ -98,6 +98,7 @@ input{
 .cart-row{
     margin:10px;
     padding:20px;
+    background-color: #2a262695;
 }
 .cartItems{
     background-color: #a3c4dd;
@@ -111,8 +112,9 @@ input{
     border: none;
     padding: 5px 10px;
     cursor: pointer;
-  }
-  .delete-button:hover {
+}
+.delete-button:hover {
     background-color: darkred;
-  }
+}
+
 
