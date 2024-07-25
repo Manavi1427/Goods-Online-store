@@ -125,3 +125,17 @@ body {
 .openbtn:hover {
   background-color: #444;
 }
+.fashion{
+  margin:30px;
+  padding:10px;
+}
+.women{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.wf1{
+  margin: auto;
+  padding:15px;
+  background-color: #050505;
+}
