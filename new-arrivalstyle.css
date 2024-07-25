@@ -127,7 +127,7 @@ body {
 }
 .fashion{
   margin:30px;
-  padding:10px;
+  padding:10 10 10 25px;
 }
 .women{
   display:flex;
@@ -136,6 +136,27 @@ body {
 }
 .wf1{
   margin: auto;
-  padding:15px;
+  padding:15px 10px 40px;
   background-color: #050505;
+  text-align: center;
+  transform: box-shadow 0.3s;
+}
+.wf1:hover{
+  box-shadow: black;
+}
+.wf1 p{
+  font-family: sans-serif;
+  color: #96bfdf;
+  font-size: larger;
+  margin-top: 20px;
+}
+.wf1 button{
+  height: 40px;
+  background-color: green;
+  border-radius: 10px;
+  transform: background-color ;
+}
+.wf1 button:hover{
+  background-color: rgb(1, 102, 1);
+
 }
