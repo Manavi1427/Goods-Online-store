@@ -114,6 +114,7 @@ body {
 
 .openbtn {
   font-size: 20px;
+  position:fixed;
   cursor: pointer;
   background-color: #111;
   color: white;
@@ -125,24 +126,39 @@ body {
 .openbtn:hover {
   background-color: #444;
 }
-.fashion{
-  margin:30px;
+#fashion{
+  margin-left:0px;
   padding:10 10 10 25px;
+  transition: 0.5s;
 }
 .women{
   display:flex;
   flex-wrap: wrap;
   justify-content: center;
 }
+#tittle{
+  text-align: center;
+  width:100%;
+  color:#111;
+  background-color: #818181;
+  margin:20px;
+  margin-top:40px;
+  padding:15px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: larger;
+  font-weight: 700;
+  letter-spacing: 5px;
+}
 .wf1{
   margin: auto;
   padding:15px 10px 40px;
   background-color: #050505;
   text-align: center;
-  transform: box-shadow 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .wf1:hover{
-  box-shadow: black;
+  transform: translateY(-7px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 .wf1 p{
   font-family: sans-serif;
@@ -158,5 +174,10 @@ body {
 }
 .wf1 button:hover{
   background-color: rgb(1, 102, 1);
-
+}
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
 }
