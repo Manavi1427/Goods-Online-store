@@ -126,12 +126,10 @@ body {
 .openbtn:hover {
   background-color: #444;
 }
-#fashion{
+.product-panel{
   margin-left:0px;
   padding:10 10 10 25px;
   transition: 0.5s;
-}
-.women{
   display:flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -175,7 +173,16 @@ body {
 .wf1 button:hover{
   background-color: rgb(1, 102, 1);
 }
+.content {
+  visibility: hidden;
+  transition: visibility 0s,
+}
+.content.active {
+  visibility: visible;
+}
 footer {
+  margin-top: 20px;
+  margin-bottom: 0%;
   background-color: #333;
   color: white;
   text-align: center;
