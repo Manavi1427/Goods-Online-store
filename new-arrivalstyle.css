@@ -174,13 +174,11 @@ body {
   background-color: rgb(1, 102, 1);
 }
 .content {
-  visibility: hidden;
-  opacity:0;
-  transition: visibility 0s,
+  display:none;
 }
 .content.active {
-  visibility: visible;
-  opacity: 1;
+  display:flex;
+  transition: 0.5s ;
 }
 footer {
   margin-top: 20px;
