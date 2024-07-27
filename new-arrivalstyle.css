@@ -175,10 +175,12 @@ body {
 }
 .content {
   visibility: hidden;
+  opacity:0;
   transition: visibility 0s,
 }
 .content.active {
   visibility: visible;
+  opacity: 1;
 }
 footer {
   margin-top: 20px;
