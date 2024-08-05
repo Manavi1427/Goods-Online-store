@@ -11,7 +11,6 @@ header {
     color: white;
     padding: 15px 0;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     transition: 0.5s;
 }
@@ -27,8 +26,7 @@ header {
 
 .header-content h1 {
     color: #d3da86;
-    margin: 0;
-    flex-grow: 1; /* Ensures the title takes the available space */
+    margin-left: 0;
 }
 
 nav ul {
