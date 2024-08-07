@@ -100,6 +100,7 @@ input{
     padding:20px;
     background-color: #2a262695;
     color: white;
+    box-shadow: 5px 5px black;
 }
 .cartItems{
     background-color: #a3c4dd;
